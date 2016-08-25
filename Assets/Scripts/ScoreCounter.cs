@@ -2,12 +2,15 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class ScoreCounter : MonoBehaviour {
+public class ScoreCounter : MonoBehaviour
+{
+	public static int score = 0;
+	public static int maxScore = 0;
 
-	private int score = 0;
 
 	void OnEnable()
 	{
+		score = 0;
 		EventManager.onTubesPass += IncreaseScore;
 	}
 
@@ -18,9 +21,8 @@ public class ScoreCounter : MonoBehaviour {
 
 	void IncreaseScore()
 	{
-		score++;
-//		var text = GetComponent<Text> ();
-//		text.text = score.ToString();
+		if (++score > maxScore)
+			maxScore = score;
 
 		GetComponent<Text> ().text = score.ToString ();
 	}

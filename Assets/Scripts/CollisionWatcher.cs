@@ -7,7 +7,7 @@ public class CollisionWatcher : MonoBehaviour
 {
 	void OnCollisionEnter2D(Collision2D coll) 
 	{
-		SceneManager.LoadScene (0);
+		SceneManager.LoadScene (2);
 	}
 
 	void OnTriggerEnter2D(Collider2D other)
