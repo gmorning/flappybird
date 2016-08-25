@@ -1,21 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
-public class CollisionWatcher : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
-
+public class CollisionWatcher : MonoBehaviour 
+{
 	void OnCollisionEnter2D(Collision2D coll) 
 	{
 		SceneManager.LoadScene (0);
+	}
+
+	void OnTriggerEnter2D(Collider2D other)
+	{
+		EventManager.onTubesPass.Invoke ();
 	}
 }
